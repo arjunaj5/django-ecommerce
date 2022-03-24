@@ -5,14 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login form</h1>
+    <h1>Common Login Admin/ Employee</h1>
     <form action="" method="post">
         {% csrf_token %}
-        Username: <input type="text" name="username" id="">
-        Password: <input type="password" name="password" id="">
-        <input type="submit" value="sumbit">
+        <div class="container">
+            <div class="row">
+
+                <p>
+                    Username: 
+                </p>
+                <p>
+                    <input type="text" name="username" id="">
+
+                </p>
+            </div>
+            <div class="row">
+                <p>
+                    Password: 
+                </p>
+                <p>
+
+                    <input type="password" name="password" id="">
+                </p>
+            </div>
+            <input type="submit" value="Login">
+        </div>
     </form><br>
     {{msg}}
 </body>

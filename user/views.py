@@ -5,11 +5,6 @@ from .models import signup
 def index(request):
     return render(request,'index.html')
 
-def jquery(request):
-    return render(request,'jqury.html')
-
-def fb(request):
-    return render(request,'fb.html')
 
 
 # view to update and delete data from table signup
@@ -25,9 +20,13 @@ def main(request):
 def form(request):
     if request.method=='POST':
         name = request.POST['name']
+        place = request.POST['place']
+        address = request.POST['address']
+        username = request.POST['username']
         email = request.POST['email']
-        pwd = request.POST['pwd']
-        obj = signup(name=name, email=email, password=pwd)
+        password = request.POST['password']
+
+        obj = signup(name=name, email=email, password=password, place=place, username=username, address=address)
         obj.save()
 
     return render(request,'form.html')
